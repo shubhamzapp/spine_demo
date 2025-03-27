@@ -1,6 +1,6 @@
-# spine_demo
+# spine_flutter_example
 
-A new Flutter project.
+Demonstrates how to use the spine_flutter plugin.
 
 ## Getting Started
 
