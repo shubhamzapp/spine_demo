@@ -14,6 +14,7 @@ class _SpineAnimationWidgetState extends State<SpineAnimationWidget> {
   void initState() {
     super.initState();
     _controller = SpineWidgetController();
+   
   }
 
   @override
@@ -21,10 +22,27 @@ class _SpineAnimationWidgetState extends State<SpineAnimationWidget> {
     return Scaffold(
       appBar: AppBar(title: Text("Spine Animation - Snake")),
       body: Center(
-        child: SpineWidget.fromAsset(
-          "assets/Snake.atlas",
-          "assets/Snake.json",
-          _controller,
+        child: Column(
+          children: [
+            Container(
+              width: 300,
+              height: 300,
+              child: SpineWidget.fromAsset(
+                
+                "assets/Snake.atlas",
+                "assets/Snake.json",
+                _controller,
+                sizedByBounds: true,
+                fit: BoxFit.cover,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _controller.resume();
+               },
+              child: Text("Resume"),
+            ),
+          ],
         ),
       ),
     );

@@ -27,6 +27,28 @@
 /// SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ///
 
-export 'dart:ffi' if (dart.library.html) 'package:web_ffi_fork/web_ffi.dart';
+import 'package:spine_flutter/spine_flutter.dart';
+import 'package:flutter/material.dart';
 
-export 'package:ffi/ffi.dart' if (dart.library.html) 'package:web_ffi_fork/src/ffi/utf8.dart';
+class SnakeAnimation extends StatelessWidget {
+  const SnakeAnimation({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    reportLeaks();
+    final controller = SpineWidgetController(onInitialized: (controller) {
+      // Set the default mixing time between animations
+      controller.animationState.getData().setDefaultMix(0.2);
+      // Set the portal animation on track 0
+      controller.animationState.setAnimationByName(0, "portal", true);
+      // Queue the run animation after the portal animation
+      controller.animationState.addAnimationByName(0, "run", true, 0);
+    });
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Snake Animation')),  
+
+      body: SpineWidget.fromAsset("assets/Snake.atlas", "assets/Snake.json", controller)
+    );
+  }
+}

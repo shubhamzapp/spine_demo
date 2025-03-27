@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.2
+  sdk: ^3.5.4
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -27,7 +27,7 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-
+# spine-cpp/spine-cpp-lite/spine-cpp-lite.cpp
 
 dependencies:
   flutter:
@@ -39,8 +39,11 @@ dependencies:
   #   git:
   #     url: https://github.com/EsotericSoftware/spine-runtimes.git
   #     path: spine-flutter
-  spine_flutter:
-    path: spine-flutter
+  spine_flutter: ^4.2.33  
+  flame: ^1.10.1
+  raw_image_provider: ^0.2.0
+
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,7 +54,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
-
+  change_app_package_name: ^1.5.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -67,7 +70,7 @@ flutter:
     - assets/
     - assets/Snake.json
     - assets/Snake.png
-    - assets/Snake.atlas.txt
+    - assets/Snake.atlas
 
   # To add assets to your application, add an assets section, like this:
   # assets:
