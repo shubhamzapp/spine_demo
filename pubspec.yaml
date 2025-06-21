@@ -70,7 +70,7 @@ flutter:
     - assets/
     - assets/Snake.json
     - assets/Snake.png
-    - assets/Snake.atlas
+    - assets/Snake.atlas.txt
 
   # To add assets to your application, add an assets section, like this:
   # assets:

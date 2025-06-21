@@ -39,16 +39,20 @@ class SnakeAnimation extends StatelessWidget {
     final controller = SpineWidgetController(onInitialized: (controller) {
       // Set the default mixing time between animations
       controller.animationState.getData().setDefaultMix(0.2);
-      // Set the portal animation on track 0
-      controller.animationState.setAnimationByName(0, "portal", true);
-      // Queue the run animation after the portal animation
-      controller.animationState.addAnimationByName(0, "run", true, 0);
+      // Set the animation on track 0
+      controller.animationState.setAnimationByName(0, "animation", true);
     });
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Snake Animation')),  
-
-      body: SpineWidget.fromAsset("assets/Snake.atlas", "assets/Snake.json", controller)
-    );
+        appBar: AppBar(title: const Text('Snake Animation')),
+        body: Column(
+          children: [
+            Container(
+                width: MediaQuery.of(context).size.width,
+                height: 300,
+                child: SpineWidget.fromAsset(
+                    "assets/Snake.atlas.txt", "assets/Snake.json", controller)),
+          ],
+        ));
   }
 }

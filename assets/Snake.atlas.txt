@@ -1,0 +1,13 @@
+Snake.png
+size:1157,1157
+filter:Linear,Linear
+pma:true
+Remove background project
+bounds:650,848,209,287
+offsets:3,6,212,297
+Remove background project (2)
+bounds:650,680,128,146
+offsets:9,8,138,156
+Remove background project (3)
+bounds:22,22,606,1113
+offsets:197,94,1014,1404
